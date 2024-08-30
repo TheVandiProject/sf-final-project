@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Make a Payment" icon-name="utility:moneybag">
+        <div class="slds-p-around_medium">
+            <!-- Displaying Loan Information -->
+            <div class="slds-grid slds-gutters slds-wrap slds-box slds-theme_default">
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-title_bold slds-m-bottom_x-small">Remaining Loan Amount:</p>
+                    <p class="slds-text-heading_medium slds-m-bottom_medium">{remainingLoanAmount}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="slds-text-title_bold slds-m-bottom_x-small">Monthly EMI:</p>
+                    <p class="slds-text-heading_medium slds-m-bottom_medium">{monthlyEMI}</p>
+                </div>
+            </div>
+
+            <!-- Payment Button with Feedback -->
+            <div class="slds-align_absolute-center slds-m-top_medium">
+                <button class="slds-button slds-button_brand slds-button_stretch" onclick={handleMakePayment}>
+                    <lightning-icon icon-name="utility:check" alternative-text="Make Payment" size="small" class="slds-m-right_xx-small"></lightning-icon>
+                    Make Payment
+                </button>
+            </div>
+
+            <!-- Success Message -->
+            <template if:true={paymentSuccess}>
+                <div class="slds-notify slds-notify_alert slds-theme_success slds-m-top_medium">
+                    <span class="slds-assistive-text">Success</span>
+                    <span class="slds-icon_container slds-icon-utility-success slds-m-right_x-small">
+                        <lightning-icon icon-name="utility:success" alternative-text="Success" size="small"></lightning-icon>
+                    </span>
+                    <h2>Payment made successfully!</h2>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
+
+
+
+<!-- <template>
+    <lightning-card title="Make a Payment">
+        <div class="slds-p-around_medium">
+            <p><strong>Remaining Loan Amount:</strong> {remainingLoanAmount}</p>
+            <p><strong>Monthly EMI:</strong> {monthlyEMI}</p>
+            <button class="slds-button slds-button_success"  onclick={handleMakePayment}>Make Payment</button>
+        </div>
+    </lightning-card>
+</template> -->

@@ -1,0 +1,3 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <lightning:button label="Provide Feedback" onclick="{!c.navigateToFeedbackPage}" />
+</aura:component>

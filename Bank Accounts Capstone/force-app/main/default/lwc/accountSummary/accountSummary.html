@@ -1,0 +1,66 @@
+<template>
+    <lightning-modal-header label="Account Summary"></lightning-modal-header>
+    <lightning-modal-body>
+        <template if:true={accountData}>
+            <div class="slds-box slds-theme_default slds-p-around_medium">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Name Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-m-bottom_medium">
+                        <p class="slds-text-title_bold">Name</p>
+                        <p class="slds-text-heading_medium">{accountData.Name}</p>
+                    </div>
+                    
+                    <!-- Total Loan Amount -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_medium">
+                        <p class="slds-text-title_bold">Total Loan Amount</p>
+                        <p class="slds-text-heading_medium">{formattedTotalLoanAmount}</p>
+                    </div>
+                    
+                    <!-- Loan Interest Rate -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_medium">
+                        <p class="slds-text-title_bold">Loan Interest Rate</p>
+                        <p class="slds-text-heading_medium">{accountData.Loan_Interest_Rate__c}%</p>
+                    </div>
+                    
+                    <!-- Monthly EMI -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_medium">
+                        <p class="slds-text-title_bold">Monthly EMI</p>
+                        <p class="slds-text-heading_medium">{formattedMonthlyEMI}</p>
+                    </div>
+                    
+                    <!-- Remaining Loan Amount -->
+                    <div class="slds-col slds-size_1-of-2 slds-m-bottom_medium">
+                        <p class="slds-text-title_bold">Remaining Loan Amount</p>
+                        <p class="slds-text-heading_medium">{formattedRemainingLoanAmount}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <template if:false={accountData}>
+            <p>No account data found.</p>
+        </template>
+    </lightning-modal-body>
+</template>
+
+
+
+
+
+<!-- <template>
+    <lightning-modal-header label="Account Summary"></lightning-modal-header>
+    <lightning-modal-body>
+        <template if:true={accountData}>
+            <div class="account-record">
+                <p><strong>Name:</strong> {accountData.Name}</p>
+                <p><strong>Total Loan Amount:</strong> ${accountData.Total_Loan_Amount__c}</p>
+                <p><strong>Loan Interest Rate:</strong> {accountData.Loan_Interest_Rate__c}%</p>
+                <p><strong>Monthly EMI:</strong> ${accountData.Monthly_EMI__c}</p>
+                <p><strong>Remaining Loan Amount:</strong> ${accountData.Remaining_Loan_Amount__c}</p>
+            </div>
+        </template>
+        <template if:false={accountData}>
+            <p>No account data found.</p>
+        </template>
+    </lightning-modal-body>
+</template> -->

@@ -1,0 +1,66 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+    <apex:slds />
+    
+    <!-- Custom Styles -->
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Salesforce Sans', Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f6f9, #e2e6ed);
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .card-container {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 500px;
+            width: 100%;
+        }
+        .card-header {
+            background-color: #0176d3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .submit-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f6f9;
+        }
+    </style>
+    
+    <!-- Page Content -->
+    <div class="container">
+        <div class="card-container">
+            <div class="card-header">
+                Submit Your Feedback
+            </div>
+            <div class="card-body">
+                <div id="lightningContainer"></div>
+            </div>
+            <div class="submit-footer">
+                <!-- Footer with additional information or branding -->
+                <p>Thank you for your feedback!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Lightning Out Script -->
+    <script src="/lightning/lightning.out.js"></script>
+    <script>
+        $Lightning.use("c:feedbackApp", function() {
+            $Lightning.createComponent("c:feedbackForm", {}, "lightningContainer");
+        });
+    </script>
+</apex:page>

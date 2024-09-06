@@ -28,6 +28,8 @@ public class AccountTriggerHandler {
                     acc.Loan_Interest_Rate__c = 11;
                 } else if (acc.Total_Loan_Amount__c <= 1000000) {
                     acc.Loan_Interest_Rate__c = 14;
+                } else {
+                    acc.addError('We do not provide a loan beyond 1000000 for this type of account.');
                 }
                 System.debug('Calculated Loan Interest Rate for Salary Account - Home Loan: ' + acc.Loan_Interest_Rate__c);
 
